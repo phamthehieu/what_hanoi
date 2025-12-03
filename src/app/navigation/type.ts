@@ -5,5 +5,5 @@ export type RootScreenProps<
 > = NativeStackScreenProps<RootStackParamList, S>;
 
 export type RootStackParamList = {
-
+  Onboarding: undefined;
 };

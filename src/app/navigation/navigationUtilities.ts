@@ -11,7 +11,7 @@ import * as storage from '@store/index';
 
 import type {NavigationProps} from './AppNavigator';
 import type {RootStackParamList} from './type';
-import { useIsMounted } from '@/lib/useIsMounted';
+import { useIsMounted } from '@/shared/lib/useIsMounted';
 
 type Storage = typeof storage;
 type PersistNavigationConfig = 'always' | 'dev' | 'prod' | 'never';

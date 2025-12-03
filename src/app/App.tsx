@@ -1,34 +1,54 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { useEffect, useState } from 'react';
 
-import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { GoogleGenAI } from "@google/genai";
-import { useEffect } from 'react';
-import EventSearchApp from '../../EventSearchApp';
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { Provider } from 'react-redux';
+import { initI18n } from '@shared/i18n';
+import { AppNavigator } from '@app/navigation/AppNavigator';
+import { useNavigationPersistence } from '@app/navigation/navigationUtilities';
+import { ThemeProvider } from '@shared/theme/context';
+import { NetworkStatusBanner } from '@shared/ui/NetworkStatusBanner';
+import { loadDateFnsLocale } from '@shared/lib/formatDate';
+import * as storage from '@store/index';
+import { store } from '@/app/store';
+import { ToastProvider } from '@shared/ui/toast/ToastProvider';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-  const apiKey = "AIzaSyDEg3E9upW1wAYzNDSKblaMuXoA4WZp6AI";
-  const ai = new GoogleGenAI({ apiKey });
+export const NAVIGATION_PERSISTENCE_KEY = 'NAVIGATION_STATE';
+
+export function App() {
+  const {
+    initialNavigationState,
+    onNavigationStateChange,
+    isRestored: isNavigationStateRestored,
+  } = useNavigationPersistence(storage, NAVIGATION_PERSISTENCE_KEY);
+
+  const [isI18nInitialized, setIsI18nInitialized] = useState(false);
+
+  useEffect(() => {
+    initI18n()
+      .then(() => setIsI18nInitialized(true))
+      .then(() => loadDateFnsLocale());
+  }, []);
+
+  if (!isNavigationStateRestored || !isI18nInitialized) {
+    return null;
+  }
+
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <EventSearchApp />
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <ThemeProvider>
+              <AppNavigator
+                initialState={initialNavigationState}
+                onStateChange={onNavigationStateChange}
+              />
+              <NetworkStatusBanner />
+              <ToastProvider />
+          </ThemeProvider>
+      </SafeAreaProvider>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;

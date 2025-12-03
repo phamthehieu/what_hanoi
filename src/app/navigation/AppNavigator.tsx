@@ -10,11 +10,12 @@ import ENV from '@shared/config/env';
 import { Paths } from './path';
 import { RootStackParamList } from './type';
 import { ErrorBoundary } from '@/features/error/ErrorBoundary';
+import { OnboardingScreen } from '@/features/onboarding';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const exitRoutes: (keyof RootStackParamList)[] = [];
+const exitRoutes: (keyof RootStackParamList)[] = [Paths.Onboarding];
 
 const AppStack = () => {
 
@@ -24,7 +25,7 @@ const AppStack = () => {
                 headerShown: false,
             }}
         >
-            
+            <Stack.Screen name={Paths.Onboarding} component={OnboardingScreen} />
         </Stack.Navigator >
     );
 };

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Animated, View, ViewStyle } from 'react-native';
 import { WifiOff } from 'lucide-react-native';
 
-import { useNetworkStatus, checkNetworkConnection } from '../lib/useNetworkStatus';
+import { useNetworkStatus, checkNetworkConnection } from '@shared/lib/useNetworkStatus';
 import { useAppTheme } from '../theme';
 import type { ThemedStyle } from '../theme/types';
 import { TextFieldLabel } from './Text';
