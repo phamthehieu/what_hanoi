@@ -11,6 +11,7 @@ import { Paths } from './path';
 import { RootStackParamList } from './type';
 import { ErrorBoundary } from '@/features/error/ErrorBoundary';
 import { OnboardingScreen } from '@/features/onboarding';
+import { HomeScreen } from '@/features/home';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +27,9 @@ const AppStack = () => {
             }}
         >
             <Stack.Screen name={Paths.Onboarding} component={OnboardingScreen} />
+
+            <Stack.Screen name={Paths.Home} component={HomeScreen} />
+
         </Stack.Navigator >
     );
 };

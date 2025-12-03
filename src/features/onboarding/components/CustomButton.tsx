@@ -6,17 +6,16 @@ import Animated, {
   withTiming,
   SharedValue,
 } from 'react-native-reanimated';
-import {useNavigation} from '@react-navigation/native';
-
+import { useTranslation } from 'react-i18next';
 interface CustomButtonProps {
   flatListRef: React.RefObject<FlatList<any>>;
   flatListIndex: SharedValue<number>;
   dataLength: number;
+  onPress: () => void;
 }
 
-const CustomButton = ({flatListRef, flatListIndex, dataLength}: CustomButtonProps) => {
-  const navigation = useNavigation();
-
+const CustomButton = ({flatListRef, flatListIndex, dataLength, onPress}: CustomButtonProps) => {
+  const {t} = useTranslation();
   const buttonAnimationStyle = useAnimatedStyle(() => {
     return {
       width:
@@ -62,12 +61,12 @@ const CustomButton = ({flatListRef, flatListIndex, dataLength}: CustomButtonProp
         if (flatListIndex.value < dataLength - 1) {
           flatListRef.current.scrollToIndex({index: flatListIndex.value + 1});
         } else {
-          navigation.goBack();
+          onPress();
         }
       }}>
       <Animated.View style={[styles.container, buttonAnimationStyle]}>
         <Animated.Text style={[styles.textButton, textAnimationStyle]}>
-          Khám phá ngay
+            {t('onboarding.exploreNow')}
         </Animated.Text>
         <Animated.Image
           source={require('../../../assets/images/onboarding/ArrowIcon.png')}

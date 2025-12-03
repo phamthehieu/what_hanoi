@@ -12,11 +12,18 @@ import data from '../data/data';
 import Pagination from '../components/Pagination';
 import CustomButton from '../components/CustomButton';
 import {SafeAreaView} from 'react-native-safe-area-context';
-const OnboardingScreen = () => {
+import { useTranslation } from 'react-i18next';
+import { RootScreenProps } from '@/app/navigation/type';
+import { Paths } from '@/app/navigation/path';
+import { useAppTheme } from '@/shared/theme';
+
+const OnboardingScreen = ({navigation}: RootScreenProps<Paths.Onboarding>) => {
   const {width: SCREEN_WIDTH} = useWindowDimensions();
   const flatListRef = useAnimatedRef<any>();
   const x = useSharedValue(0);
   const flatListIndex = useSharedValue(0);
+  const { theme: { colors } } = useAppTheme();
+    const styles = $styles(colors);
 
   const onViewableItemsChanged = ({viewableItems}: {viewableItems: any[]}) => {
     flatListIndex.value = viewableItems[0].index;
@@ -28,8 +35,8 @@ const OnboardingScreen = () => {
     },
   });
 
-  // eslint-disable-next-line react/no-unstable-nested-components
   const RenderItem = ({item, index}: {item: any, index: number}) => {
+    const {t} = useTranslation();
     const imageAnimationStyle = useAnimatedStyle(() => {
       const opacityAnimation = interpolate(
         x.value,
@@ -91,8 +98,8 @@ const OnboardingScreen = () => {
       <View style={[styles.itemContainer, {width: SCREEN_WIDTH}]}>
         <Animated.Image source={item.image} style={imageAnimationStyle} />
         <Animated.View style={textAnimationStyle}>
-          <Text style={styles.itemTitle}>{item.title}</Text>
-          <Text style={styles.itemText}>{item.text}</Text>
+          <Text style={styles.itemTitle}>{t(item.title)}</Text>
+          <Text style={styles.itemText}>{t(item.text)}</Text>
         </Animated.View>
       </View>
     );
@@ -125,6 +132,7 @@ const OnboardingScreen = () => {
           flatListRef={flatListRef}
           flatListIndex={flatListIndex}
           dataLength={data.length}
+          onPress={() => navigation.replace(Paths.Home)}
         />
       </View>
     </SafeAreaView>
@@ -133,28 +141,28 @@ const OnboardingScreen = () => {
 
 export default OnboardingScreen;
 
-const styles = StyleSheet.create({
+const $styles = (colors: any) => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8E9B0',
+    backgroundColor: colors.backgroundOnboarding,
   },
   itemContainer: {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#F8E9B0',
+    backgroundColor: colors.backgroundOnboarding,
   },
   itemTitle: {
     textAlign: 'center',
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: 'black',
+    color: colors.text,
   },
   itemText: {
     textAlign: 'center',
     marginHorizontal: 35,
-    color: 'black',
+    color: colors.text,
     lineHeight: 20,
   },
   bottomContainer: {
