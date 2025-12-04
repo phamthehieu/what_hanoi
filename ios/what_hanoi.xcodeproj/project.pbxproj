@@ -11,6 +11,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		5C2D4515AE904119846CF31C /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78A72BC58F944A508B8B86E2 /* DancingScript-Bold.ttf */; };
+		9126BAC6B8354EA1A6755124 /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 314814B98D514B5A94FD8656 /* DancingScript-Medium.ttf */; };
+		215CF81FC9C9452596F26381 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE90EBE6C94418BA1AB8429 /* DancingScript-Regular.ttf */; };
+		4EF62860C1BA4784BECCADC8 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F96AB1E7D43A4D6EA6D20425 /* DancingScript-SemiBold.ttf */; };
+		157A2066648F42BCB17ABBB8 /* ScienceGothic_Condensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D9CE779516457F9B0AD389 /* ScienceGothic_Condensed-Black.ttf */; };
+		4797B673D49F4F40A8F92E3C /* ScienceGothic_Condensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36F39B83C74049C1A6CE3136 /* ScienceGothic_Condensed-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = what_hanoi/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = what_hanoi/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		78A72BC58F944A508B8B86E2 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../src/assets/font/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		314814B98D514B5A94FD8656 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../src/assets/font/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2CE90EBE6C94418BA1AB8429 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../src/assets/font/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F96AB1E7D43A4D6EA6D20425 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../src/assets/font/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		18D9CE779516457F9B0AD389 /* ScienceGothic_Condensed-Black.ttf */ = {isa = PBXFileReference; name = "ScienceGothic_Condensed-Black.ttf"; path = "../src/assets/font/ScienceGothic_Condensed-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		36F39B83C74049C1A6CE3136 /* ScienceGothic_Condensed-Bold.ttf */ = {isa = PBXFileReference; name = "ScienceGothic_Condensed-Bold.ttf"; path = "../src/assets/font/ScienceGothic_Condensed-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F7013A2F039C4C23892C59E3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +109,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F7013A2F039C4C23892C59E3 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				78A72BC58F944A508B8B86E2 /* DancingScript-Bold.ttf */,
+				314814B98D514B5A94FD8656 /* DancingScript-Medium.ttf */,
+				2CE90EBE6C94418BA1AB8429 /* DancingScript-Regular.ttf */,
+				F96AB1E7D43A4D6EA6D20425 /* DancingScript-SemiBold.ttf */,
+				18D9CE779516457F9B0AD389 /* ScienceGothic_Condensed-Black.ttf */,
+				36F39B83C74049C1A6CE3136 /* ScienceGothic_Condensed-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +186,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5C2D4515AE904119846CF31C /* DancingScript-Bold.ttf in Resources */,
+				9126BAC6B8354EA1A6755124 /* DancingScript-Medium.ttf in Resources */,
+				215CF81FC9C9452596F26381 /* DancingScript-Regular.ttf in Resources */,
+				4EF62860C1BA4784BECCADC8 /* DancingScript-SemiBold.ttf in Resources */,
+				157A2066648F42BCB17ABBB8 /* ScienceGothic_Condensed-Black.ttf in Resources */,
+				4797B673D49F4F40A8F92E3C /* ScienceGothic_Condensed-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

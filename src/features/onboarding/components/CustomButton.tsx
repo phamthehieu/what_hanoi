@@ -7,6 +7,7 @@ import Animated, {
   SharedValue,
 } from 'react-native-reanimated';
 import { useTranslation } from 'react-i18next';
+import { typography } from '@/shared/theme/typography';
 interface CustomButtonProps {
   flatListRef: React.RefObject<FlatList<any>>;
   flatListIndex: SharedValue<number>;
@@ -91,5 +92,10 @@ const styles = StyleSheet.create({
   arrow: {
     position: 'absolute',
   },
-  textButton: {color: 'white', fontSize: 16, position: 'absolute'},
+  textButton: {
+    color: 'white',
+    fontSize: 18,
+    position: 'absolute',
+    fontFamily: typography.fonts.dancingScript.normal,
+  },
 });

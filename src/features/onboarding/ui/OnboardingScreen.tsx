@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { RootScreenProps } from '@/app/navigation/type';
 import { Paths } from '@/app/navigation/path';
 import { useAppTheme } from '@/shared/theme';
+import { typography } from '@shared/theme/typography';
 
 const OnboardingScreen = ({navigation}: RootScreenProps<Paths.Onboarding>) => {
   const {width: SCREEN_WIDTH} = useWindowDimensions();
@@ -155,15 +156,16 @@ const $styles = (colors: any) => StyleSheet.create({
   itemTitle: {
     textAlign: 'center',
     fontSize: 22,
-    fontWeight: 'bold',
     marginBottom: 10,
     color: colors.text,
+    fontFamily: typography.fonts.scienceGothic.black,
   },
   itemText: {
     textAlign: 'center',
     marginHorizontal: 35,
     color: colors.text,
     lineHeight: 20,
+    fontFamily: typography.fonts.dancingScript.normal,
   },
   bottomContainer: {
     flexDirection: 'row',
